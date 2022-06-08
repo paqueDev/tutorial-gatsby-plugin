@@ -14,6 +14,7 @@
 
 const {API_URL, getAllCountries} = require('./src/api')
 const { v4: uuidv4 } = require('uuid');
+import {APP_NAME, NODES_KEY, NODES_TYPES} from "./src/config";
 
 
 exports.onPreInit = () => console.log("Loaded gatsby-source-countries")
@@ -41,11 +42,11 @@ exports.sourceNodes = async ({
             const id = uuidv4()
 
             const nodeMeta = {
-                id: createNodeId(`restcountries-country-${id}`),
+                id: createNodeId(`${APP_NAME}-${NODES_KEY.COUNTRY}-${id}`),
                 parent: null,
                 children: [],
                 internal: {
-                    type: `RestcountriesCountry`,
+                    type: NODES_TYPES[NODES_KEY.COUNTRY],
                     mediaType: `application/json`,
                     content: nodeContent,
                     contentDigest: createContentDigest(country),
