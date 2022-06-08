@@ -1,1 +1,1 @@
-# tutorial-gatsby-plugin-part1
+# tutorial-gatsby-plugin
