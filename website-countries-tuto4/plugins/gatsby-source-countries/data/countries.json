@@ -1,0 +1,398 @@
+[
+  {
+    "name":{
+      "common":"Cyprus",
+      "official":"Republic of Cyprus",
+      "nativeName":{
+        "ell":{
+          "official":"Δημοκρατία της Κύπρος",
+          "common":"Κύπρος"
+        },
+        "tur":{
+          "official":"Kıbrıs Cumhuriyeti",
+          "common":"Kıbrıs"
+        }
+      }
+    },
+    "tld":[
+      ".cy"
+    ],
+    "cca2":"CY",
+    "ccn3":"196",
+    "cca3":"CYP",
+    "cioc":"CYP",
+    "independent":true,
+    "status":"officially-assigned",
+    "unMember":true,
+    "currencies":{
+      "EUR":{
+        "name":"Euro",
+        "symbol":"€"
+      }
+    },
+    "idd":{
+      "root":"+3",
+      "suffixes":[
+        "57"
+      ]
+    },
+    "capital":[
+      "Nicosia"
+    ],
+    "altSpellings":[
+      "CY",
+      "Kýpros",
+      "Kıbrıs",
+      "Republic of Cyprus",
+      "Κυπριακή Δημοκρατία",
+      "Kıbrıs Cumhuriyeti"
+    ],
+    "region":"Europe",
+    "subregion":"Southern Europe",
+    "languages":{
+      "ell":"Greek",
+      "tur":"Turkish"
+    },
+    "translations":{
+      "ara":{
+        "official":"جمهورية قبرص",
+        "common":"قبرص"
+      },
+      "ces":{
+        "official":"Kyperská republika",
+        "common":"Kypr"
+      },
+      "cym":{
+        "official":"Gweriniaeth Cyprus",
+        "common":"Cyprus"
+      },
+      "deu":{
+        "official":"Republik Zypern",
+        "common":"Zypern"
+      },
+      "est":{
+        "official":"Küprose Vabariik",
+        "common":"Küpros"
+      },
+      "fin":{
+        "official":"Kyproksen tasavalta",
+        "common":"Kypros"
+      },
+      "fra":{
+        "official":"République de Chypre",
+        "common":"Chypre"
+      },
+      "hrv":{
+        "official":"Republika Cipar",
+        "common":"Cipar"
+      },
+      "hun":{
+        "official":"Ciprusi Köztársaság",
+        "common":"Ciprus"
+      },
+      "ita":{
+        "official":"Repubblica di Cipro",
+        "common":"Cipro"
+      },
+      "jpn":{
+        "official":"キプロス共和国",
+        "common":"キプロス"
+      },
+      "kor":{
+        "official":"키프로스 공화국",
+        "common":"키프로스"
+      },
+      "nld":{
+        "official":"Republiek Cyprus",
+        "common":"Cyprus"
+      },
+      "per":{
+        "official":"جمهوری قبرس",
+        "common":"قِبرِس"
+      },
+      "pol":{
+        "official":"Republika Cypryjska",
+        "common":"Cypr"
+      },
+      "por":{
+        "official":"República de Chipre",
+        "common":"Chipre"
+      },
+      "rus":{
+        "official":"Республика Кипр",
+        "common":"Кипр"
+      },
+      "slk":{
+        "official":"Cyperská republika",
+        "common":"Cyprus"
+      },
+      "spa":{
+        "official":"República de Chipre",
+        "common":"Chipre"
+      },
+      "swe":{
+        "official":"Republiken Cypern",
+        "common":"Cypern"
+      },
+      "urd":{
+        "official":"جمہوریہ قبرص",
+        "common":"قبرص"
+      },
+      "zho":{
+        "official":"塞浦路斯共和国",
+        "common":"塞浦路斯"
+      }
+    },
+    "latlng":[
+      35.0,
+      33.0
+    ],
+    "landlocked":false,
+    "area":9251.0,
+    "demonyms":{
+      "eng":{
+        "f":"Cypriot",
+        "m":"Cypriot"
+      },
+      "fra":{
+        "f":"Chypriote",
+        "m":"Chypriote"
+      }
+    },
+    "flag":"\uD83C\uDDE8\uD83C\uDDFE",
+    "maps":{
+      "googleMaps":"https://goo.gl/maps/77hPBRdLid8yD5Bm7",
+      "openStreetMaps":"https://www.openstreetmap.org/relation/307787"
+    },
+    "population":123456,
+    "gini":{
+      "2018":32.7
+    },
+    "fifa":"CYP",
+    "car":{
+      "signs":[
+        "CY"
+      ],
+      "side":"left"
+    },
+    "timezones":[
+      "UTC+02:00"
+    ],
+    "continents":[
+      "Europe"
+    ],
+    "flags":{
+      "png":"https://flagcdn.com/w320/cy.png",
+      "svg":"https://flagcdn.com/cy.svg"
+    },
+    "coatOfArms":{
+      "png":"https://mainfacts.com/media/images/coats_of_arms/cy.png",
+      "svg":"https://mainfacts.com/media/images/coats_of_arms/cy.svg"
+    },
+    "startOfWeek":"monday",
+    "capitalInfo":{
+      "latlng":[
+        35.17,
+        33.37
+      ]
+    },
+    "postalCode":{
+      "format":"####",
+      "regex":"^(\\d{4})$"
+    }
+  },
+  {
+    "name":{
+      "common":"Yemen",
+      "official":"Republic of Yemen",
+      "nativeName":{
+        "ara":{
+          "official":"الجمهورية اليمنية",
+          "common":"اليَمَن"
+        }
+      }
+    },
+    "tld":[
+      ".ye"
+    ],
+    "cca2":"YE",
+    "ccn3":"887",
+    "cca3":"YEM",
+    "cioc":"YEM",
+    "independent":true,
+    "status":"officially-assigned",
+    "unMember":true,
+    "currencies":{
+      "YER":{
+        "name":"Yemeni rial",
+        "symbol":"﷼"
+      }
+    },
+    "idd":{
+      "root":"+9",
+      "suffixes":[
+        "67"
+      ]
+    },
+    "capital":[
+      "Sana'a"
+    ],
+    "altSpellings":[
+      "YE",
+      "Yemeni Republic",
+      "al-Jumhūriyyah al-Yamaniyyah"
+    ],
+    "region":"Asia",
+    "subregion":"Western Asia",
+    "languages":{
+      "ara":"Arabic"
+    },
+    "translations":{
+      "ara":{
+        "official":"الجمهورية اليمنية",
+        "common":"اليمن"
+      },
+      "ces":{
+        "official":"Jemenská republika",
+        "common":"Jemen"
+      },
+      "cym":{
+        "official":"Republic of Yemen",
+        "common":"Yemen"
+      },
+      "deu":{
+        "official":"Republik Jemen",
+        "common":"Jemen"
+      },
+      "est":{
+        "official":"Jeemeni Vabariik",
+        "common":"Jeemen"
+      },
+      "fin":{
+        "official":"Jemenin tasavalta",
+        "common":"Jemen"
+      },
+      "fra":{
+        "official":"République du Yémen",
+        "common":"Yémen"
+      },
+      "hrv":{
+        "official":"Republika Jemen",
+        "common":"Jemen"
+      },
+      "hun":{
+        "official":"Jemeni Köztársaság",
+        "common":"Jemen"
+      },
+      "ita":{
+        "official":"Repubblica dello Yemen",
+        "common":"Yemen"
+      },
+      "jpn":{
+        "official":"イエメン共和国",
+        "common":"イエメン"
+      },
+      "kor":{
+        "official":"예멘 공화국",
+        "common":"예멘"
+      },
+      "nld":{
+        "official":"Republiek Jemen",
+        "common":"Jemen"
+      },
+      "per":{
+        "official":"جمهوری یمن",
+        "common":"یمن"
+      },
+      "pol":{
+        "official":"Republika Jemeńska",
+        "common":"Jemen"
+      },
+      "por":{
+        "official":"República do Iêmen",
+        "common":"Iémen"
+      },
+      "rus":{
+        "official":"Йеменская Республика",
+        "common":"Йемен"
+      },
+      "slk":{
+        "official":"Jemenská republika",
+        "common":"Jemen"
+      },
+      "spa":{
+        "official":"República de Yemen",
+        "common":"Yemen"
+      },
+      "swe":{
+        "official":"Republiken Jemen",
+        "common":"Jemen"
+      },
+      "urd":{
+        "official":"جمہوریہ یمن",
+        "common":"یمن"
+      },
+      "zho":{
+        "official":"也门共和国",
+        "common":"也门"
+      }
+    },
+    "latlng":[
+      15.0,
+      48.0
+    ],
+    "landlocked":false,
+    "borders":[
+      "OMN",
+      "SAU"
+    ],
+    "area":527968.0,
+    "demonyms":{
+      "eng":{
+        "f":"Yemeni",
+        "m":"Yemeni"
+      },
+      "fra":{
+        "f":"Yéménite",
+        "m":"Yéménite"
+      }
+    },
+    "flag":"\uD83C\uDDFE\uD83C\uDDEA",
+    "maps":{
+      "googleMaps":"https://goo.gl/maps/WCmE76HKcLideQQw7",
+      "openStreetMaps":"https://www.openstreetmap.org/relation/305092"
+    },
+    "population":29825968,
+    "gini":{
+      "2014":36.7
+    },
+    "fifa":"YEM",
+    "car":{
+      "signs":[
+        "YAR"
+      ],
+      "side":"right"
+    },
+    "timezones":[
+      "UTC+03:00"
+    ],
+    "continents":[
+      "Asia"
+    ],
+    "flags":{
+      "png":"https://flagcdn.com/w320/ye.png",
+      "svg":"https://flagcdn.com/ye.svg"
+    },
+    "coatOfArms":{
+      "png":"https://mainfacts.com/media/images/coats_of_arms/ye.png",
+      "svg":"https://mainfacts.com/media/images/coats_of_arms/ye.svg"
+    },
+    "startOfWeek":"sunday",
+    "capitalInfo":{
+      "latlng":[
+        15.37,
+        44.19
+      ]
+    }
+  }
+]
