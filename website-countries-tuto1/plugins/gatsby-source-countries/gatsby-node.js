@@ -36,8 +36,6 @@ exports.sourceNodes = async ({
         for (const country of countries) {
             const nodeContent = JSON.stringify(country)
 
-            console.log('country.name', country.name)
-
             const nodeMeta = {
                 id: createNodeId(`restcountries-country-${country.name.common}`),
                 parent: null,
