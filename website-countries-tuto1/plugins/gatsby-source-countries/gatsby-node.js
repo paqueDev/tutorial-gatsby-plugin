@@ -12,9 +12,7 @@
  * See: https://www.gatsbyjs.com/docs/creating-a-local-plugin/#developing-a-local-plugin-that-is-outside-your-project
  */
 
-const {API_URL, getAllCountries} = require('./src/api')
-const {APP_NAME, NODES_KEY, NODE_TYPES} = require("./src/config")
-
+const fetch = require('node-fetch')
 
 exports.onPreInit = () => console.log("Loaded gatsby-source-countries")
 
@@ -23,41 +21,38 @@ exports.sourceNodes = async ({
                                  createNodeId,
                                  createContentDigest,
                                  reporter,
-                                 getNodesByType,
                              }) => {
     const { createNode } = actions
 
     try {
-
-        const countriesNodeEntities = {}
-        const countries = await getAllCountries({
-            apiUrl: API_URL,
+        const response = await fetch(`https://restcountries.com/v3.1/all`, {
+            method: 'GET',
             headers : {
                 'Content-Type': 'application/json',
-            }})
+            },
+        })
+        const countries = await response.json()
 
         for (const country of countries) {
             const nodeContent = JSON.stringify(country)
-            const id = country.cca3
+
+            console.log('country.name', country.name)
 
             const nodeMeta = {
-                id: createNodeId(`${APP_NAME}-${NODES_KEY.COUNTRY}-${id}`),
+                id: createNodeId(`restcountries-country-${country.name.common}`),
                 parent: null,
                 children: [],
                 internal: {
-                    type: NODE_TYPES[NODES_KEY.COUNTRY],
+                    type: `RestcountriesCountry`,
                     mediaType: `application/json`,
                     content: nodeContent,
                     contentDigest: createContentDigest(country),
                 },
             }
 
-            countriesNodeEntities[id] = Object.assign({}, country, nodeMeta)
+            createNode( Object.assign({}, country, nodeMeta))
         }
 
-        for (const entity of Object.values(countriesNodeEntities)) {
-            createNode(entity)
-        }
 
     }catch (e) {
         console.error(e)
