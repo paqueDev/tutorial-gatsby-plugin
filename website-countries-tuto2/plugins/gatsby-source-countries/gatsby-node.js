@@ -12,9 +12,8 @@
  * See: https://www.gatsbyjs.com/docs/creating-a-local-plugin/#developing-a-local-plugin-that-is-outside-your-project
  */
 
-const {API_URL, getAllCountries} = require('./src/api')
-const {APP_NAME, NODES_KEY, NODE_TYPES, CACHE_KEY} = require("./src/config")
-
+const fetch = require('node-fetch')
+const CACHE_KEY = 'restcountries-last-response'
 
 exports.onPreInit = () => console.log("Loaded gatsby-source-countries")
 
@@ -28,20 +27,17 @@ exports.sourceNodes = async ({
                              }) => {
     const { createNode, touchNode } = actions
 
-    const {COUNTRY} = NODES_KEY
-
-    const executions = {
-        [COUNTRY]: {
-            nodeType: NODE_TYPES[COUNTRY],
+    const execution = {
+            nodeType: 'RestcountriesCountry',
             hasChanged : false,
-            nodes: [],
             items: [],
-        }
+            nodes: [],
     }
 
     const prepareNodes = (execution) =>
         new Promise((resolve) => {
             const { nodeType } = execution
+
             execution.nodes = getNodesByType(nodeType)
             for (const node of execution.nodes) {
                 touchNode(node)
@@ -51,25 +47,27 @@ exports.sourceNodes = async ({
 
     const fetchCountries = async () => {
 
-        const countries = await getAllCountries({
-            apiUrl: API_URL,
+        const response = await fetch(`https://restcountries.com/v3.1/all`, {
+            method: 'GET',
             headers : {
                 'Content-Type': 'application/json',
-            }})
+            },
+        })
+        const countries = await response.json()
 
-        executions.country.items = countries
+        execution.items = countries
 
-        const responseCached =  await cache.get(CACHE_KEY.ALL)
+        const responseCached =  await cache.get(CACHE_KEY)
         if(!responseCached){
-            console.log('init all-last-response cached value')
-            executions.country.hasChanged = true
+            console.log('init restcountries-last-response cached value')
+            execution.hasChanged = true
 
         }else{
             if(JSON.stringify(countries) !== responseCached){
-                executions.country.hasChanged = true
+                execution.hasChanged = true
             }
         }
-        cache.set(CACHE_KEY.ALL, JSON.stringify(countries))
+        cache.set(CACHE_KEY, JSON.stringify(countries))
 
     }
 
@@ -80,15 +78,14 @@ exports.sourceNodes = async ({
             if(hasChanged){
                 for (const item of items) {
                     const nodeContent = JSON.stringify(item)
-                    const id = item.cca3
 
                     createNode({
                         ...item,
-                        id: createNodeId(`${APP_NAME}-${NODES_KEY.COUNTRY}-${id}`),
+                        id: createNodeId(`restcountries-country-${item.name.common}`),
                         parent: null,
                         children: [],
                         internal: {
-                            type: NODE_TYPES[NODES_KEY.COUNTRY],
+                            type: 'RestcountriesCountry',
                             mediaType: `application/json`,
                             content: nodeContent,
                             contentDigest: createContentDigest(item),
@@ -100,15 +97,12 @@ exports.sourceNodes = async ({
             resolve()
         })
 
-    await Promise.all(
-        Object.values(executions).map((execution) => prepareNodes(execution))
-    )
+     await prepareNodes(execution)
 
     try {
 
         await fetchCountries()
-        await Promise.all(Object.values(executions).map(processData))
-
+        await processData(execution)
 
     }catch (e) {
         console.error(e)
