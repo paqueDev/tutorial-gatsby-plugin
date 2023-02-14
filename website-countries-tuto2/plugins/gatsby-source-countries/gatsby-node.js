@@ -97,7 +97,7 @@ exports.sourceNodes = async ({
             resolve()
         })
 
-     await prepareNodes(execution)
+    await prepareNodes(execution)
 
     try {
 
